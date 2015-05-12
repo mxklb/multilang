@@ -20,6 +20,15 @@ function updateLanguage() {
   updateLanguageOption();
 }
 
+/* Updates the viewed language */
+function updateTranslations() {
+  document.getElementById('test1').innerHTML = R('test1', 7.5);
+  document.getElementById('test2').innerHTML = R('test2', '[ml/dl]');
+  document.getElementById('test3').innerHTML = R('test3', 1.5);
+  document.getElementById('en-GB').innerHTML = R('en-GB');
+  document.getElementById('de-DE').innerHTML = R('de-DE');
+}
+
 /* Sets the lang selection due to 'lang' var */
 function updateLanguageOption() {
   var select = document.getElementById("selectLanguage");
@@ -44,11 +53,3 @@ function showSelectedLanguage() {
   updateLanguage();
 }
 
-/* Updates the viewed language */
-function updateTranslations() {
-  document.getElementById('test1').innerHTML = R('test1', 7.5);
-  document.getElementById('test2').innerHTML = R('test2', '[ml/dl]');
-  document.getElementById('test3').innerHTML = R('test3', 1.5);
-  document.getElementById('en-GB').innerHTML = R('en-GB');
-  document.getElementById('de-DE').innerHTML = R('de-DE');
-}
