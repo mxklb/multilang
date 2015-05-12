@@ -3,7 +3,9 @@
 
 An offline capable (no server needed) js only multilanguage html page test setup.
 
-This is an example implementation demonstrating the usage of the _R.js_ lib written by [Keith Cirkel](https://github.com/keithamus). 
+This is an example implementation demonstrating the usage of the _R.js_ lib written by [Keith Cirkel](https://github.com/keithamus).
+
+This example is published using gh-pages, check out: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
 
 All translations are defined within javascript ('json') files for better abstraction. The initialization uses a prefined default language while providing the user the ability to switch the language on demand. The choosen language is always backed up in the browsers local storrage for further usage - page reload. 
 
