@@ -1,3 +1,0 @@
-[submodule "ext/rjs"]
-	path = ext/rjs
-	url = https://github.com/keithamus/R.js.git
