@@ -3,8 +3,25 @@ var lang = 'en-GB';
 
 /* Initialization on page load */
 window.onload = function() {
+  initLanguageOptions();
   getLocalLanguage();
   updateLanguage();
+}
+
+/* Takes all langfiles and generates an select option for each */
+function initLanguageOptions() {
+  var select = document.getElementById("selectLanguage");
+  for( var language of langfiles ) {
+    option = document.createElement('option');
+    option.value = option.id = language.replace('_','-');
+    select.add(option);
+  }
+  
+  R.setLocale('langs');
+  for( var language of langfiles ) {
+    language = language.replace('_', '-');
+    document.getElementById(language).innerHTML = R(language);
+  }
 }
 
 /* Tries to load lang from local storage */
@@ -25,8 +42,6 @@ function updateTranslations() {
   document.getElementById('test1').innerHTML = R('test1', 7.5);
   document.getElementById('test2').innerHTML = R('test2', '[ml/dl]');
   document.getElementById('test3').innerHTML = R('test3', 1.5);
-  document.getElementById('en-GB').innerHTML = R('en-GB');
-  document.getElementById('de-DE').innerHTML = R('de-DE');
 }
 
 /* Sets the lang selection due to 'lang' var */
