@@ -13,7 +13,7 @@ function initLanguageOptions() {
   var select = document.getElementById("selectLanguage");
   for( var language of langfiles ) {
     option = document.createElement('option');
-    option.value = option.id = language.replace('_','-');
+    option.value = option.text = option.id = language.replace('_','-');
     select.add(option);
   }
   
@@ -39,6 +39,7 @@ function updateLanguage() {
 
 /* Updates the viewed language */
 function updateTranslations() {
+  document.getElementById('title').innerHTML = R('title');
   document.getElementById('test1').innerHTML = R('test1', 7.5);
   document.getElementById('test2').innerHTML = R('test2', '[ml/dl]');
   document.getElementById('test3').innerHTML = R('test3', 1.5);
