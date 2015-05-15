@@ -4,15 +4,15 @@ An offline capable (no server needed) JS only multilanguage HTML webpage templat
 
 ## Plain HTML/JS Internationalisation Wrapper for R.js
 
-This is an example implementation demonstrating a possible usage of the _R.js_ lib written by [Keith Cirkel](https://github.com/keithamus).
+This is an example implementation demonstrating a usage of the _R.js_ lib written by [Keith Cirkel](https://github.com/keithamus).
 
 This example is published using gh-pages. To check it out visit: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
 
 I began this 'project' as _R.js_-example to be used for client side JS only internationalization 
-in webamps. I did this, to learn how to use and handle the _R.js_ lib, with the vision in mind to integrate it later on into an existing project of mine. 
+in webapps. I did this, to learn how to use and handle the _R.js_ lib, with the vision in mind to integrate it later on into an existing project of mine. 
 It finally grew up to some kind of interface (API/Wrapper) around _R.js_. My main purpose of it is, to make translation as easy 
 and separted from the rest of the webapp as possible. Steps for adding new languages are almost automized. The code is
-written to be (hopefully) understandable, maintainable and reusage friendly.
+written to be (hopefully) easy understandable, maintainable and reusage friendly.
 
 Single translations are defined within single javascript ('json') files for a best abstraction purpose. The initialization uses a prefined 
 default language, while providing the user the ability to switch the language on demand. The selected language is always 
