@@ -1,8 +1,8 @@
 // English translation
 R.registerLocale('en-GB', 
 {
-  'title': "Easy local translation using java-script",
+  'title': "Smart & Easy local Translation using Java-Script",
+  'subtitle': "This is a test implementation (wrapper) for the R.js lib",
   'test1': "I am a string with a number %i",
-  'test2': "I am another string with a string %s",
-  'test3': "I am the third string with a number %i"
+  'test2': "I am another string with a string %s"
 });
