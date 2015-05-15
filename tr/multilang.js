@@ -161,7 +161,7 @@ function updateTranslation(elementId, text) {
       elem.innerHTML = text;
     }
     else console.log('missing class ' + matchClass + ' for element id: ' + elem.id);
-  } 
+  }
 }
 
 /*
@@ -190,7 +190,7 @@ function translatePlainTexts() {
     if((' ' + elems[i].className + ' ').indexOf(' ' + matchClass + ' ') > -1) {
       var text = R( elems[i].id );
       if( isStringValid(text) ) {
-        updateTranslation(i, text);
+        updateTranslation(elems[i].id, text);
       }
       else if( !asfEnable ) { 
         console.log("invalid string '" + text + "' " + " for element id: " + elems[i].id);
