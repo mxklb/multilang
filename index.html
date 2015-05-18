@@ -1,6 +1,7 @@
 <!doctype html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <title>mutilang [R.js wrapper] - Plain JS internationalization</title>
   <script type="text/javascript" src="ext/rjs/R.js"></script> <!-- multi language support lib R.js -->
   <script type="text/javascript" src="tr/multilang.js"></script> <!-- R.js wrapper interface multilang.js -->
@@ -8,11 +9,11 @@
 </head>
 
 <body>
-  <h1 id="title" class="multilang">Bad Title</h1>
-  <p id="subtitle" class="multilang">This is the subtitle</p>
-  <div id="test1" class="multilang">initial text 1</div>
-  <div id="test2" class="multilang">initial text 2</div>
-  <div id="test3">The third text will never get translated</div>
+  <h1 id="title" class="multilang">Plain JS internationalization (Bad Title)</h1>
+  <p id="subtitle" class="multilang">This is the famous subtitle</p>
+  <div id="test1" class="multilang">Initial text 1</div>
+  <div id="test2" class="multilang">Initial text two</div>
+  <div id="test3">This text will never get translated</div>
   <select id="selectLanguage" onchange="selectedLanguageChanged();"></select>
 </body>
 </html>
