@@ -6,6 +6,7 @@
   <script type="text/javascript" src="ext/rjs/R.js"></script> <!-- multi language support lib R.js -->
   <script type="text/javascript" src="tr/multilang.js"></script> <!-- R.js wrapper interface multilang.js -->
   <script type="text/javascript" src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -14,6 +15,8 @@
   <div id="test1" class="multilang">Initial text 1</div>
   <div id="test2" class="multilang">Initial text two</div>
   <div id="test3">This text will never get translated</div>
-  <select id="selectLanguage" onchange="selectedLanguageChanged();"></select>
+  <div class="form-select column-6">
+    <select id="selectLanguage" onchange="selectedLanguageChanged();"></select>
+  </div>
 </body>
 </html>
