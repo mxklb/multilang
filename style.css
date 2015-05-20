@@ -13,8 +13,22 @@ body {
   line-height: 1.5em;
 }
 
+#title {
+	line-height: 1.1em;
+}
 
-@charset "UTF-8";
+#main {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-height: 300px; 
+}
+
+/*==========  Special select styling  ==========*/
 .form-select {
   -moz-user-select: -moz-none;
   -ms-user-select: none;
@@ -48,6 +62,7 @@ body {
 }
 
 select {
+	text-align: center;
   position: relative;
   background: transparent;
   background-image: none;
@@ -60,7 +75,7 @@ select {
   border: none;
   padding: 10px 10px 10px 5px;
   text-overflow: '';
-  text-indent: 5px;
+  #text-indent: -3px;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -83,6 +98,9 @@ select option[disabled] {
   text-shadow: none;
   border: none;
 }
+select option {
+	text-align: center;
+}
 
 select:-moz-focusring {
   color: transparent;
@@ -94,7 +112,7 @@ select::-ms-expand {
 }
 
 /*==========  Generic styling  ==========*/
-.column-6 {
+.select {
   position: relative;
   margin-top: 1.5em;
   width: 200px;
@@ -106,4 +124,6 @@ select::-ms-expand {
   transform: translateX(-50%);
   overflow:hidden;
 }
+
+
 
