@@ -62,7 +62,7 @@ body {
 }
 
 select {
-	text-align: center;
+  text-align: center;
   position: relative;
   background: transparent;
   background-image: none;
@@ -75,10 +75,10 @@ select {
   border: none;
   padding: 10px 10px 10px 5px;
   text-overflow: '';
-  #text-indent: -3px;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+
 select[multiple=multiple] {
   height: auto;
   border: 1px solid #cbcbcb;
@@ -98,9 +98,6 @@ select option[disabled] {
   text-shadow: none;
   border: none;
 }
-select option {
-	text-align: center;
-}
 
 select:-moz-focusring {
   color: transparent;
@@ -115,7 +112,7 @@ select::-ms-expand {
 .select {
   position: relative;
   margin-top: 1.5em;
-  width: 200px;
+  max-width: 250px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -124,6 +121,7 @@ select::-ms-expand {
   transform: translateX(-50%);
   overflow:hidden;
 }
+
 
 
 

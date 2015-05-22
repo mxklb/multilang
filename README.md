@@ -1,6 +1,6 @@
 # multilang
 
-An offline capable (no server needed) JS only multilanguage HTML webpage template.
+An offline capable (no server needed) JS only static multilanguage HTML webpage template.
 
 ## Plain HTML/JS Internationalisation Wrapper for R.js
 
@@ -20,7 +20,33 @@ backed up in the browsers local storrage for further usage - page reload.
 
 Feel free to play around with it and/or send some pull requests for further translations or optimizations.
 
-## Adding further translations
+## How to use it - Initial Setup
+If you plan to do client side translation using _multilang_ in your own project all you need is the content of the _tr/_ folder. _multilang_ depends on the _R.js_ lib so you should have that too. If you experience compatibility issues with the actual version of R.js let me know. To avoid this I use my own fork ... see submodule in _ext/rjs_.
+
+Follow these steps to initially setup _multilang_:
+
+- Make sure you have R.js included within your html document head first, then include _multilang.js_ afterwards.
+```html
+    <script type="text/javascript" src="ext/R.js"></script>
+    <script type="text/javascript" src="tr/multilang.js"></script>
+```
+- Trigger _multilang_'s initialisation method _initLanguages()_ in your onload function (js)
+
+```java    
+    initLanguages();
+```
+- Set class attribute 'multilang' and a unique id for each html dom element to translate
+```html
+    <div id="fancy" class="multilang">initial text</div>
+```
+- Optionally add an empty 'select' to let _multilang_ autogenerate language select options
+```html
+    <select id="selectLanguage" onChange="selectedLanguageChanged();"></select>
+```
+
+Now make sure to register and provide translations for all elements with the class attribute 'multilang'. How to do this is described in the following chapter ...  
+
+## Adding languages - Edit Translations
 
 - Generate a new translation file (_Note_: Requires utf8 encoding!)*
 - Copy/Paste the content of _en_GB.js_ to get a good starting base

@@ -11,7 +11,7 @@
  */
 function translateCustomTexts() {
   updateTranslationParamer('test1', 7.5);
-  updateTranslationParamer('test2', '[bluBlub}');
+  updateTranslationParamer('test2', '[العَرَبِيَّة алфа สระ 振畬}');
   
   // >-- Try out some examples ...
   //updateTranslation('test1', R('test1', 7.5));
