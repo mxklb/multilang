@@ -168,7 +168,7 @@ function updateTranslation(elementId, text) {
  * Helper function to call R.js advanced string translation with a single parameter.
  * The inserted parameter type must match integer (%i) or string (%s) as registered.
  */
-function updateTranslationParamer(elementId, param) {
+function updateTranslationParameter(elementId, param) {
   updateTranslation(elementId, R(elementId, param));
 }
 
