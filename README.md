@@ -16,7 +16,7 @@ backed up in the browsers local storrage for further usage - page reload.
 This example is published using gh-pages. Check it out on: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
 
 ## Initial Setup - How to use it
-To use _multilang_ in your own project all you need is the content of the _tr/_ folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my own fork of it, therefore checkout the submodule _rjs_.
+To use _multilang_ in your own project all you need is the content of the `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my own fork of it - therefore checkout _multilang_'s submodule [_rjs_](https://github.com/maxkalb/R.js).
 
 Follow these steps to initially setup _multilang_:
 
@@ -44,7 +44,7 @@ Now make sure to register translations for all elements with the `class="multila
 
 ## Register Translations - Adding languages
 
-Single translations are defined within single javascript ("json") files for best abstraction purpose.
+Single translations are defined within single `.js` files for best abstraction purpose.
 For each language generate one js file with UTF8 character encoding. 
 
 - Register translations for each `class="multilang"` element `id`
@@ -65,19 +65,19 @@ For each language generate one js file with UTF8 character encoding.
       ...
     });
 ```
-- Set `<select>` option names for each translation/language, edit _langdef.js_
+- Define `<select>` option names for each translation/language
 ```java
-    R.registerLocale('langs', 
+    R.registerLocale('langs',       // Language names -> langdef.js
     { 
       'en-GB': "English",
       'de-DE': "German"
     });    
 ```
-- Define which translation-files shall be loaded, edit _multilang.js_' head
+- Define which translation-files shall be loaded
 ```java
-    var langfiles = ['en_GB', 'de_DE'];
+    var langfiles = ['en_GB', 'de_DE'];  // Initial languages -> multilang.js
 ```
-Note: As best practice make sure to use standard POSIX locale names for new translation ("json") file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore _ in filenames while minus sign - for language registration ids.
+Note: As best practice make sure to use standard POSIX locale names for new translation file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore _ in filenames while minus sign - for language registration ids.
 
 ## Optional Setup
 
