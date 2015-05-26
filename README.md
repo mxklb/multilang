@@ -4,7 +4,7 @@ An offline capable local - JS only - multilanguage setup for static HTML pages.
 
 ## Plain HTML/JS Internationalization using _R.js_
 
-_multilang_ is an example implementation demonstrating the [_R.js_ lib](https://github.com/keithamus/R.js) written by [Keith Cirkel](https://github.com/keithamus).
+_multilang_ is a library-wrapper implementation demonstrating the [_R.js_ lib](https://github.com/keithamus/R.js) written by [Keith Cirkel](https://github.com/keithamus).
 
 I began this project as _R.js_-evaluation to be used for client side internationalization 
 within static HTML pages. I did this, to learn how to use and handle the _R.js_ lib, with the vision in mind to integrate it later on into an existing project of mine. It finally grew to some kind of interface (API/Wrapper) around _R.js_. 
@@ -13,7 +13,7 @@ The main purpose of _multilang_ is to make translation as easy
 and separted from the rest of the webpage as possible. Steps for adding new languages are intuitive and almost automized. One time setup and easy maintenance are major aims. The initialization uses a prefined default language, while providing the user the ability to switch languages on demand. The user selected language is always 
 backed up in the browsers local storrage for further usage - page reload.
 
-This example is published using gh-pages. Check it out on: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
+This demo code is published with gh-pages. Check it out here: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
 
 ## Initial Setup - How to use it
 To use _multilang_ in your own project all you need is the content of _multilang_'s `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my fork of it - therefore simple checkout _multilang_'s submodule [_rjs_](https://github.com/maxkalb/R.js).
