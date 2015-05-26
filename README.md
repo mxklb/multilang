@@ -75,7 +75,8 @@ Single translations are defined within single js files for best abstraction purp
 ```
 - Define which js/translation-files shall be loaded
 ```java
-    var langfiles = ['en_GB', 'de_DE'];  // Setup languages -> multilang.js
+    // Setup languages -> multilang.js
+    var langfiles = ['en_GB', 'de_DE'];
 ```
 Note: As best practice make sure to use standard POSIX locale names for new translation file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore _ in filenames while minus sign - for _R.js_ language registration ids.
 
