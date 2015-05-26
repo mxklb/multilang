@@ -48,7 +48,8 @@ Single translations are defined within single js files for best abstraction purp
 
 - Register translations for each `class="multilang"` element `id`
 ```java
-    R.registerLocale('en-GB',       // English translation -> en_GB.js 
+    // English translation -> en_GB.js 
+    R.registerLocale('en-GB',
     {
       'fancy': "translated text",
       'number': "text with num %i"
@@ -56,7 +57,8 @@ Single translations are defined within single js files for best abstraction purp
 ```
 
 ```java
-    R.registerLocale('de-DE',       // German translation -> de_DE.js 
+    // German translation -> de_DE.js 
+    R.registerLocale('de-DE',
     {
       'fancy': "übersetzter text",
       'number': "text mit nr %i"
@@ -64,7 +66,8 @@ Single translations are defined within single js files for best abstraction purp
 ```
 - Define a `<select>` option name for each language
 ```java
-    R.registerLocale('langs',       // Language names -> langdef.js
+    // Language names -> langdef.js
+    R.registerLocale('langs',
     { 
       'en-GB': "English",
       'de-DE': "German"
@@ -78,7 +81,7 @@ Note: As best practice make sure to use standard POSIX locale names for new tran
 
 ## Optional Setup
 
-The initial setup section within _multilang.js_ provides advanced controls for _multilang_. The initial default language, _R.js_' Advanced String Formating (asf) and some major configurations and tweakings can be performed ...
+The initial setup section within _multilang.js_ provides advanced controls for _multilang_. The initial default language, _R.js_' Advanced String Formating (asf) and some major configurations can be performed ...
     
 - The default language is _en-GB_. To change this edit `var defaultlang = 'en-GB'`
 
@@ -90,7 +93,8 @@ The initial setup section within _multilang.js_ provides advanced controls for _
          
     If asf is enabled provide a _custom.js_ file within your translation directory `tr/` and overwrite _multilang_'s `translateCustomTexts()` function in it. `translateCustomTexts()` will always be executed if the language was changed or `updateLanguage()` was called. To substitute single `%i` or `%s` statements within registered translations view the following _multilang_ code snippet.
 ```java
-    function translateCustomTexts() {    // Custom translations -> custom.js
+    // Custom translations -> custom.js
+    function translateCustomTexts() {
         updateTranslationParameter('number', 7.5);
         //==updateTranslation('number', R('number', 7.5));
     }
@@ -100,4 +104,4 @@ Note: Per default the _custom.js_ will be loaded automatically as final script d
 ## License
 This code is licensed under MIT. See LICENSE file for further informations about this. 
 
-Feel free to play around with the code and/or send some pull requests for further translations or improvements. Arabic, Russian, Chinese, Thai, Greek, e.g. foreign characters would be nice to see .. just enjoy it ..
+Feel free to play around with the code and/or send some pull requests for further translations or improvements. Arabic, Russian, Chinese, Thai, Greek, e.g. foreign characters would be nice to see ..
