@@ -16,7 +16,7 @@ backed up in the browsers local storrage for further usage - page reload.
 This example is published using gh-pages. Check it out on: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
 
 ## Initial Setup - How to use it
-To use _multilang_ in your own project all you need is the content of the `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my own fork of it - therefore checkout _multilang_'s submodule [_rjs_](https://github.com/maxkalb/R.js).
+To use _multilang_ in your own project all you need is the content of _multilang_'s `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my fork of it - therefore simple checkout _multilang_'s submodule [_rjs_](https://github.com/maxkalb/R.js).
 
 Follow these steps to initially setup _multilang_:
 
@@ -27,8 +27,8 @@ Follow these steps to initially setup _multilang_:
 ```
 - Set `class="multilang"` attribute and a unique `id=".."` for each HTML element to translate
 ```html
-    <div id="fancy" class="multilang">initial text</div>
-    <div id="number" class="multilang">text with num 7.5</div>
+    <div class="multilang" id="fancy">initial text</div>
+    <div class="multilang" id="number">text with num 7.5</div>
 ```
 - Optionally add an empty `<select>` to let _multilang_ autogenerate language select options ui
 ```html
@@ -44,16 +44,14 @@ Now make sure to register translations for all elements with the `class="multila
 
 ## Register Translations - Adding languages
 
-Single translations are defined within single `.js` files for best abstraction purpose.
-For each language generate one js file with UTF8 character encoding. 
+Single translations are defined within single js files for best abstraction purpose. For each language generate one js file with UTF8 character encoding. 
 
 - Register translations for each `class="multilang"` element `id`
 ```java
     R.registerLocale('en-GB',       // English translation -> en_GB.js 
     {
       'fancy': "translated text",
-      'number': "text with num %i",
-      ...
+      'number': "text with num %i"
     });
 ```
 
@@ -61,11 +59,10 @@ For each language generate one js file with UTF8 character encoding.
     R.registerLocale('de-DE',       // German translation -> de_DE.js 
     {
       'fancy': "übersetzter text",
-      'number': "text mit nr %i",
-      ...
+      'number': "text mit nr %i"
     });
 ```
-- Define `<select>` option names for each translation/language
+- Define a `<select>` option name for each language
 ```java
     R.registerLocale('langs',       // Language names -> langdef.js
     { 
@@ -73,27 +70,27 @@ For each language generate one js file with UTF8 character encoding.
       'de-DE': "German"
     });    
 ```
-- Define which translation-files shall be loaded
+- Define which js/translation-files shall be loaded
 ```java
-    var langfiles = ['en_GB', 'de_DE'];  // Initial languages -> multilang.js
+    var langfiles = ['en_GB', 'de_DE'];  // Setup languages -> multilang.js
 ```
-Note: As best practice make sure to use standard POSIX locale names for new translation file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore _ in filenames while minus sign - for language registration ids.
+Note: As best practice make sure to use standard POSIX locale names for new translation file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore _ in filenames while minus sign - for _R.js_ language registration ids.
 
 ## Optional Setup
 
 The initial setup section within _multilang.js_ provides advanced controls for _multilang_. The initial default language, _R.js_' Advanced String Formating (asf) and some major configurations and tweakings can be performed ...
     
-- The default language is _en-GB_. To change this edit `var defaultlang = 'en-GB';`
+- The default language is _en-GB_. To change this edit `var defaultlang = 'en-GB'`
 
-- The default ui `<select id="selectLanguage">`. To use a different id set `var langSelectId`.
+- The default translation directory is `tr/`. To change it set `var langdirectory = your/path/` 
 
-- The default translation directory is _tr/_. To change it set `var langdirectory`. 
+- The default `<select id="selectLanguage">`. To use a different `id` set `var langSelectId`
     
-- To enable advanced string formating (`%i`, `%s`) feature of _R.js_ set `var asfEnable = true;`
+- To enable advanced string formating features (`%i`, `%s`) of _R.js_ set `var asfEnable = true`
          
-    If asf is enabled setup a _custom.js_ file within your translation directory and overwrite _multilang_'s `translateCustomTexts()` function. Implement your cutom _R.js_ commands here. To substitute single `%i` and `%s` statements within registered translations view the following _multilang_ code snippet. Also view code comments and the _R.js_ documentation to get familiar with the asf feature. _multilang_ may lack some features regarding the _R.js_-asf functionallity (tbd) ..
+    If asf is enabled provide a _custom.js_ file within your translation directory `tr/` and overwrite _multilang_'s `translateCustomTexts()` function in it. `translateCustomTexts()` will always be executed if the language was changed or `updateLanguage()` was called. To substitute single `%i` or `%s` statements within registered translations view the following _multilang_ code snippet.
 ```java
-    function translateCustomTexts() {
+    function translateCustomTexts() {    // Custom translations -> custom.js
         updateTranslationParameter('number', 7.5);
         //==updateTranslation('number', R('number', 7.5));
     }
