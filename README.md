@@ -6,11 +6,9 @@ An offline capable local - JS only - multilanguage setup for static HTML pages.
 
 _multilang_ is a library-wrapper implementation demonstrating the [_R.js_ lib](https://github.com/keithamus/R.js) written by [Keith Cirkel](https://github.com/keithamus).
 
-I began this project as _R.js_-evaluation to be used for client side internationalization 
-within static HTML pages. I did this, to learn how to use and handle the _R.js_ lib, with the vision in mind to integrate it later on into an existing project of mine. It finally grew to some kind of interface (API/Wrapper) around _R.js_. 
+I began this project as _R.js_-evaluation to be used for client side internationalization within static HTML pages. I did this, to learn how to use and handle the _R.js_ lib, with the vision in mind to integrate it later on into an existing project of mine. It finally grew to some kind of interface (API/Wrapper) around _R.js_. 
 
-The main purpose of _multilang_ is to make translation as easy 
-and separted from the rest of the webpage as possible. Steps for adding new languages are intuitive and almost automized. One time setup and easy maintenance are major aims. The initialization uses a prefined default language, while providing the user the ability to switch languages on demand. The user selected language is always 
+The main purpose of _multilang_ is to generate translations as easy and separted from the rest of the webpage as possible. Steps for adding new languages are intuitive and almost automized. One time setup and easy maintenance are major aims. The initialization uses a prefined default language, while providing the users an ability to switch languages on demand. The users selected language is always 
 backed up in the browsers local storrage for further usage - page reload.
 
 This demo code is published with gh-pages. Check it out here: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
@@ -30,7 +28,7 @@ Follow these steps to initially setup _multilang_:
     <div class="multilang" id="fancy">initial text</div>
     <div class="multilang" id="number">text with num 7.5</div>
 ```
-- Optionally add an empty `<select>` to let _multilang_ autogenerate language select options ui
+- Add an empty `<select>` to let _multilang_ autogenerate language select options ux
 ```html
     <select id="selectLanguage" onChange="selectedLanguageChanged();"></select>
 ```
@@ -46,7 +44,7 @@ Now make sure to register translations for all elements with the `class="multila
 
 Single translations are defined within single js files for best abstraction purpose. For each language generate one js file with UTF8 character encoding. 
 
-- Register translations for each `class="multilang"` element `id`
+- Register translations for each `class="multilang"` element `id`'s
 ```java
     // English translation -> en_GB.js 
     R.registerLocale('en-GB',
@@ -64,7 +62,7 @@ Single translations are defined within single js files for best abstraction purp
       'number': "text mit nr %i"
     });
 ```
-- Define a `<select>` option name for each language
+- Define a name for each language (viewed as `<select>` option)
 ```java
     // Language names -> langdef.js
     R.registerLocale('langs',
@@ -73,34 +71,40 @@ Single translations are defined within single js files for best abstraction purp
       'de-DE': "German"
     });    
 ```
-- Define which js/translation-files shall be loaded
+- Define which js translation-files shall be loaded
 ```java
     // Setup languages -> multilang.js
     var langfiles = ['en_GB', 'de_DE'];
 ```
-Note: As best practice make sure to use standard POSIX locale names for new translation file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore _ in filenames while minus sign - for _R.js_ language registration ids.
+Note: As best practice make sure to use standard POSIX locale names for new translation file names. For example execute `locale -a` in a shell to get locale names of your system. Make although sure to use underscore `_` in filenames while minus sign `-` for _R.js_ language registration `id`'s.
 
-## Optional Setup
+## Default Setup - Configuration
 
-The initial setup section within _multilang.js_ provides advanced controls for _multilang_. The initial default language, _R.js_' Advanced String Formating (asf) and some major configurations can be performed ...
+The initial setup section within _multilang.js_ provides some configuration controls for _multilang_. The initial default language, _R.js_' Advanced String Formating (asf) and some other configurations can be controlled ...
     
 - The default language is _en-GB_. To change this edit `var defaultlang = 'en-GB'`
 
-- The default translation directory is `tr/`. To change it set `var langdirectory = your/path/` 
+- The default translation directory is `tr/`. To change it set `var langdirectory = your/dir/` 
 
 - The default `<select id="selectLanguage">`. To use a different `id` set `var langSelectId`
     
-- To enable advanced string formating features (`%i`, `%s`) of _R.js_ set `var asfEnable = true`
+- Per default the asf-feature of _R.js_ is enanbled. To change it set `var asfEnable = false`
          
-    If asf is enabled provide a _custom.js_ file within your translation directory `tr/` and overwrite _multilang_'s `translateCustomTexts()` function in it. `translateCustomTexts()` will always be executed if the language was changed or `updateLanguage()` was called. To substitute single `%i` or `%s` statements within registered translations view the following _multilang_ code snippet.
+    If asf is enabled provide a _custom.js_ file within your translation directory and overwrite _multilang_'s `translateCustomTexts()` function in it. This function will always be executed if the language was changed or `updateLanguage()` was called. In here your able to perfom custom translations and special _R.js_ calls. To get an idea view the following _custom.js_ code snippet.
 ```java
     // Custom translations -> custom.js
     function translateCustomTexts() {
+        // hard coded substitution of innerHTML
+        updateTranslation('fancy', 'any fancy string');
+        
+        // using R.js advanced string formating
+        updateTranslation('number', R('number', 7.5));
+        
+        // simplified for one %i or %s replacement
         updateTranslationParameter('number', 7.5);
-        //==updateTranslation('number', R('number', 7.5));
     }
 ```
-Note: Per default the _custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime set `var loadCustomjs = false`. 
+Note: Per default the _custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime one can set `var loadCustomjs = false`. Now your're in control when to initialize your `translateCustomTexts()` customizations. 
 
 ## License
 This code is licensed under MIT. See LICENSE file for further informations about this. 
