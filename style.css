@@ -13,9 +13,9 @@ body {
   line-height: 1.5em;
 }
 
-#title {
-	line-height: 1.1em;
-}
+a:link {text-decoration: none; color: #222; font-style: italic;}
+a:visited {text-decoration: none; color: #444;}
+a:hover {text-decoration: none; color: #ccc;}
 
 #main {
   position: relative;
@@ -26,6 +26,15 @@ body {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   max-height: 300px; 
+}
+
+#title {
+	line-height: 1.1em;
+}
+
+#readme {
+  line-height: 1.1em;
+  margin-top: 1.5em;
 }
 
 /*==========  Special select styling  ==========*/
