@@ -16,7 +16,7 @@ This demo code is published with gh-pages. Check it out here: [http://maxkalb.gi
 ## Initial Setup - How to use it
 To use _multilang_ in your own project all you need is the content of _multilang_'s `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my fork of it - therefore simple checkout _multilang_'s submodule [_rjs_](https://github.com/maxkalb/R.js).
 
-Follow these steps to initially setup _multilang_:
+Follow these steps to initially setup _multilang_: 
 
 - Make sure to load _R.js_ within your HTML document first and afterwards load _multilang.js_
 ```html
@@ -104,7 +104,7 @@ The initial setup section within _multilang.js_ provides some configuration cont
         updateTranslationParameter('number', 7.5);
     }
 ```
-Note: _custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime set `var loadCustomjs = false`. Now your're in control when to initialize your `translateCustomTexts()` customizations. 
+_custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime set `var loadCustomjs = false`. Now your are in control when to initialize your `translateCustomTexts()` customizations. 
 
 ## License
 This code is licensed under MIT. See LICENSE file for further informations about this. 
