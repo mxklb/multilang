@@ -104,7 +104,7 @@ The initial setup section within _multilang.js_ provides some configuration cont
         updateTranslationParameter('number', 7.5);
     }
 ```
-Note: Per default the _custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime one can set `var loadCustomjs = false`. Now your're in control when to initialize your `translateCustomTexts()` customizations. 
+Note: _custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime set `var loadCustomjs = false`. Now your're in control when to initialize your `translateCustomTexts()` customizations. 
 
 ## License
 This code is licensed under MIT. See LICENSE file for further informations about this. 
