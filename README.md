@@ -11,7 +11,7 @@ I began this project as _R.js_-evaluation to be used for client side internation
 The main purpose of _multilang_ is to generate translations as easy and separted from the rest of the webpage as possible. Steps for adding new languages are intuitive and almost automized. One time setup and easy maintenance are major aims. The initialization uses a prefined default language, while providing the users an ability to switch languages on demand. The users selected language is always 
 backed up in the browsers local storrage for further usage - page reload.
 
-This demo code is published with gh-pages. Check it out here: [http://mxklb.github.io/multilang/](http://maxkalb.github.io/multilang/).
+This demo code is published with gh-pages. Check it out here: [http://mxklb.github.io/multilang/](http://mxklb.github.io/multilang/).
 
 ## Initial Setup - How to use it
 To use _multilang_ in your own project all you need is the content of _multilang_'s `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my fork of it - therefore simple checkout _multilang_'s submodule [_rjs_](https://github.com/mxklb/R.js).
