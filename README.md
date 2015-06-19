@@ -11,10 +11,10 @@ I began this project as _R.js_-evaluation to be used for client side internation
 The main purpose of _multilang_ is to generate translations as easy and separted from the rest of the webpage as possible. Steps for adding new languages are intuitive and almost automized. One time setup and easy maintenance are major aims. The initialization uses a prefined default language, while providing the users an ability to switch languages on demand. The users selected language is always 
 backed up in the browsers local storrage for further usage - page reload.
 
-This demo code is published with gh-pages. Check it out here: [http://maxkalb.github.io/multilang/](http://maxkalb.github.io/multilang/).
+This demo code is published with gh-pages. Check it out here: [http://mxklb.github.io/multilang/](http://maxkalb.github.io/multilang/).
 
 ## Initial Setup - How to use it
-To use _multilang_ in your own project all you need is the content of _multilang_'s `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my fork of it - therefore simple checkout _multilang_'s submodule [_rjs_](https://github.com/maxkalb/R.js).
+To use _multilang_ in your own project all you need is the content of _multilang_'s `tr/` folder and _R.js_ itself (_multilang_ depends on _R.js_). If you experience compatibility issues with some actual versions of _R.js_ try using my fork of it - therefore simple checkout _multilang_'s submodule [_rjs_](https://github.com/mxklb/R.js).
 
 Follow these steps to initially setup _multilang_: 
 
@@ -80,17 +80,17 @@ Note: As best practice make sure to use standard POSIX locale names for new tran
 
 ## Default Setup - Configuration
 
-The initial setup section within _multilang.js_ provides some configuration controls for _multilang_. The initial default language, _R.js_' Advanced String Formating (asf) and some other configurations can be controlled ...
+The initial setup section within _multilang.js_ provides some configuration controls for _multilang_. The initial default language, _R.js_' advanced string formating (asf) and some other configurations can be controlled ...
     
 - The default language is _en-GB_. To change this edit `var defaultlang = 'en-GB'`
 
 - The default translation directory is `tr/`. To change it set `var langdirectory = your/dir/` 
 
-- The default `<select id="selectLanguage">`. To use a different `id` set `var langSelectId`
+- The default `<select id="selectLanguage">`. To use an other `id` set `var langSelectId`
     
 - Per default the asf-feature of _R.js_ is enanbled. To change it set `var asfEnable = false`
          
-    If asf is enabled provide a _custom.js_ file within your translation directory and overwrite _multilang_'s `translateCustomTexts()` function in it. This function will always be executed if the language was changed or `updateLanguage()` was called. In here your able to perfom custom translations and special _R.js_ calls. To get an idea view the following _custom.js_ code snippet.
+    If asf is enabled provide a _custom.js_ file within your translation directory and overwrite _multilang_'s `translateCustomTexts()` function in it. This function will always be executed if the language was changed or `updateLanguage()` was called. In it you are able to perfom custom translations and special _R.js_ calls. To get an idea view the following _custom.js_ code ..
 ```java
     // Custom translations -> custom.js
     function translateCustomTexts() {
@@ -104,7 +104,7 @@ The initial setup section within _multilang.js_ provides some configuration cont
         updateTranslationParameter('number', 7.5);
     }
 ```
-_custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime set `var loadCustomjs = false`. Now your are in control when to initialize your `translateCustomTexts()` customizations. 
+_custom.js_ will be loaded automatically as final script during _multilang_'s initialisation `initLanguages()`. To manually load _custom.js_ at a later point in runtime set `var loadCustomjs = false`.
 
 ## License
 This code is licensed under MIT. See LICENSE file for further informations about this. 

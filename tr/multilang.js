@@ -218,7 +218,6 @@ function updateLanguage(){
 function initLanguages() {
   initLanguageOptions();
   getLocalLanguage();
-  setSelectOption();
   updateLanguage();
 }
 
