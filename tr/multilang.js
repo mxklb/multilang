@@ -186,7 +186,7 @@ function updateTranslationParameter(elementId, param) {
 function translatePlainTexts() {
   var matchClass = "multilang";
   var elems = document.getElementsByTagName('*');
-  for( var i in elems ) {
+  for( var i=0; elems[i]; i++ ) {
     if((' ' + elems[i].className + ' ').indexOf(' ' + matchClass + ' ') > -1) {
       var text = R( elems[i].id );
       if( isStringValid(text) ) {
