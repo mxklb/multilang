@@ -159,6 +159,7 @@ function updateTranslation(elementId, text) {
     }
     if( (' ' + elem.className + ' ').indexOf(' ' + matchClass + ' ') > -1 ) {
       elem.innerHTML = text;
+      if( elem.type == "submit" ) elem.value = text;
     }
     else console.log('missing class ' + matchClass + ' for element id: ' + elem.id);
   }
